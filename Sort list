@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Sorting
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("insert numbers");
+            List <int> newlist = new List<int>();
+            string input = Console.ReadLine();
+            newlist = input
+            .Split(',')
+            .Where(x => int.TryParse(x, out _))
+            .Select(int.Parse)
+            .ToList();
+            Console.WriteLine("Current list:");
+            foreach (int i in newlist)
+            {
+                Console.WriteLine(i);
+            }
+            
+            for (int count = 0; count < newlist.Count; count++)
+            {
+                for (int i = 0; i < newlist.Count; i++)
+                {
+                    if (i != newlist.Count - 1 && newlist[i] > newlist[i + 1])
+                    {
+                        int temp;
+                        temp = newlist[i];
+                        newlist[i] = newlist[i + 1];
+                        newlist[i + 1] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("Sorted list:");
+            foreach (int i in newlist)
+            {
+                Console.WriteLine(i);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
