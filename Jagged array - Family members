@@ -1,0 +1,29 @@
+using System;
+
+namespace JaggedArray_family_members_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //3 families each has 2 family members, need to cross - introduce them
+            string [][] Frinends = new string [][]
+            {
+                new string [] { "Olya", "Sergey"},
+                new string [] {"Raya","Lev"},
+                new string [] { "Elena","Oleg"}
+            };
+
+            Console.WriteLine("Hi {0}, I would like to introduce {1} to you", Frinends[0][0],Frinends[1][0]);
+            Console.WriteLine("Hi {0}, I would like to introduce {1} to you", Frinends[1][0], Frinends[0][1]);
+            Console.WriteLine("Hi {0}, I would like to introduce {1} to you", Frinends[0][1], Frinends[1][0]);
+
+            //можно еще так
+            string [] joesFamily = new string[] { "Marta", "Robert" };
+            string[][] friendsFamily = new string[][]
+            {
+                joesFamily
+            };
+        }
+    }
+}
