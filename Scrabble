@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Scrabble
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string maxLength = "";
+            int length = 0;
+
+            Console.WriteLine("Enter the sentense. Max length of the word is 10 symbols");
+            string input = Console.ReadLine();
+            List<string> myList = new List<string>();
+            myList = input.Split(' ','.',',').ToList();
+            foreach(string i in myList)
+            {
+                
+                if (i.Length > length)
+                {
+                    length = i.Length;
+                    maxLength = i;
+                }
+            }
+            Console.WriteLine("The word with max score is:{0} with {1} symbols",maxLength,length);
+            Console.ReadKey();
+            
+        }
+    }
+}
